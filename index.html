@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Pro Dashboard</title>
+    <link rel="shortcut icon" href="https://www.svgrepo.com/show/491585/cloud-fog.svg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <header id="top-banner">
+        <div class="container-header">
+            <div class="title-group">
+                <img class="title-icon" src="./images/svg/cloud-fog.svg" alt="Ícone">
+                <h1 class="title">Weather App</h1>
+            </div>
+            <form id="search-form">
+                <div class="input-wrapper">
+                    <input type="text" id="city-input" placeholder="Digite uma cidade..." required />
+                    <button type="submit">Buscar</button>
+                </div>
+                <span class="msg">Cidade não encontrada!</span>
+            </form>
+        </div>
+    </header>
+
+    <main id="weather-container">
+        <div id="loader" class="hide">
+            <div class="spinner"></div>
+            <p>Sincronizando dados...</p>
+        </div>
+
+        <section class="current-weather">
+            <div class="glass-container">
+                <div class="main-info">
+                    <h2 class="city-name">--</h2>
+                    <p id="current-date" class="date-info">--</p>
+                    <p class="weather-desc">--</p>
+                    <div class="temp-display">
+                        <span class="main-temp">--°C</span>
+                        <img src="" alt="" class="big-icon">
+                    </div>
+                    <div class="quick-details">
+                        <div class="q-item">💧 Humidade: <span id="hum-short">--</span></div>
+                        <div class="q-item">🌬️ Vento: <span id="wind-short">--</span></div>
+                    </div>
+                </div>
+                
+                <div class="side-details">
+                    <div class="side-item">💧 Humidade <strong id="humidity">--</strong></div>
+                    <div class="side-item">🌬️ Vento <strong id="wind">--</strong></div>
+                    <div class="side-item">🌡️ Máx/Mín <strong id="max-min">--</strong></div>
+                    
+                    <div class="unit-control">
+                        <span>Exibir em °F</span>
+                        <label class="switch">
+                            <input type="checkbox" id="unit-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bottom-section">
+            <div class="stats-glass">
+                <h3 class="section-title">Análise e Previsão Semanal</h3>
+                <div class="content-split">
+                    <div class="chart-container">
+                        <canvas id="tempChart"></canvas>
+                    </div>
+                    <div class="forecast-container">
+                        <div class="forecast-grid">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>2026 &copy; John Victor Parreiras.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./JS/script.js"></script>
+</body>
+</html>
